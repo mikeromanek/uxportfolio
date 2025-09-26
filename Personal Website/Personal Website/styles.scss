@@ -1,0 +1,370 @@
+// ==============================
+// Variables
+// ==============================
+$primary-color: #008C92;
+$secondary-color: white;
+$font-stack: 'Montserrat', Verdana;
+
+// ==============================
+// Mixins
+// ==============================
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ==============================
+// Global Styles
+// ==============================
+html {
+  scroll-behavior: smooth; // Enables smooth scrolling for anchor links
+}
+
+// ==============================
+// Body
+// ==============================
+body {
+  font-family: $font-stack;
+  margin: 0;
+  padding: 0;
+  background-color: $secondary-color;
+  color: #333;
+}
+
+// ==============================
+// Header
+// ==============================
+header {
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 1rem;
+
+  @include flex-center;
+  flex-direction: column; // only keep this once
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  nav {
+    margin-top: 0.5rem;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+
+      li {
+        a {
+          color: $secondary-color;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ==============================
+// Sidebar Section
+// ==============================
+.sidebar-profile {
+  width: 120px;
+  height: 120px;
+  border-radius: 0;
+  border: 1px solid black;
+  margin: 1rem auto;
+  display: block;
+}
+.sidebar {
+  background-color: $primary-color;
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  nav li a {
+    color: $secondary-color;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// ==============================
+// Welcome Section
+// ==============================
+.welcome {
+  text-align: center;
+  background-color: rgb(214, 213, 213);
+  padding: 4rem 2rem 2rem;
+    h2 {
+    color: $primary-color;
+    margin-bottom: 1rem;
+    }
+}
+
+// ==============================
+// About Me Section
+// ==============================
+.about-me {
+    background-color: $secondary-color;
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+  
+    h2 {
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+  
+    .bio-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 600px;
+      margin: 0 auto;
+  
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+        border: 3px solid $primary-color;
+      }
+  
+      p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+    }
+}
+
+// ==============================
+// About Me Section html section (when clicked on link)
+// ==============================
+.experience-section {
+  margin-top: 3rem;
+  padding: 2rem;
+
+  h3 {
+    color: $primary-color;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+    .exp-text {
+      h4 {
+        color: darken($primary-color, 10%);
+        font-size: 1.25rem;
+        margin-top: 1rem;
+      }
+
+      p, ul {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      ul {
+        list-style-type: disc;
+        margin-left: 1.5rem;
+        margin-top: 0.5rem;
+      }
+    }
+
+    .exp-images {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .experience-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .exp-images {
+      align-items: center;
+    }
+  }
+}
+
+// ==============================
+// Projects Section
+// ==============================
+.projects {
+    background-color: $secondary-color;
+    border: 3px solid rgb(214, 213, 213);
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+  
+    h2 {
+      color: $primary-color;
+      margin-bottom: 2rem;
+    }
+  
+    .project-grid {
+      text-align: left;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  
+    .project-card {
+      background-color: $secondary-color;
+      border-radius: 8px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding-bottom: 1rem;
+  
+      img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover; // Ensures the image covers the area without distortion
+      }
+  
+      h3 {
+        text-align: center;
+        margin: 1rem 0 0.5rem;
+        color: $primary-color;
+      }
+  
+      p {
+        padding: 0 1rem;
+        font-size: 0.95rem;
+        color: #555;
+      }
+    }
+}
+
+// ==============================
+// Contact Section
+// ==============================
+.contact-form {
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $secondary-color;
+    padding: 4rem 2rem 2rem;
+    max-width: 600px;
+    text-align: center;
+
+    .contact-info {
+      margin-top: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      font-size: 1.1rem;
+    
+      p {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0.5rem 0;
+      }
+    
+      .icon {
+        width: 24px;
+        height: 24px;
+      }
+    
+      a {
+        color: $primary-color;
+        text-decoration: none;
+    
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    // 👇 This only applies to contact.html
+    body.contact-page & {
+      margin-top: 1rem;
+    }
+  
+  
+    h2 {
+      color: $primary-color;
+      margin-bottom: 1.5rem;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+  
+      label {
+        text-align: left;
+        font-weight: bold;
+        color: #444;
+      }
+  
+      input,
+      textarea {
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-family: inherit;
+        resize: vertical;
+      }
+  
+      button {
+        background-color: $primary-color;
+        color: $secondary-color;
+        border: none;
+        padding: 0.75rem;
+        font-size: 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+    }
+}
