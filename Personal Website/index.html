@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Personal Website</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      display: flex;
+      margin: 0;
+      font-family: 'Montserrat', Verdana;
+    }
+
+    .sidebar {
+      font-family: 'Montserrat', Verdana;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 220px;
+      background-color: #008C92;
+      padding: 2rem 1rem;
+      color: white;
+    }
+
+    .sidebar h2 {
+      font-family: 'Montserrat', Verdana;
+      margin-top: 0;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .sidebar nav ul {
+      font-family: 'Montserrat', Verdana;
+      list-style: none;
+      padding: 0;
+      margin-top: 2rem;
+    }
+
+    .sidebar nav ul li {
+      font-family: 'Montserrat', Verdana;
+      margin: 1rem 0;
+    }
+
+    .sidebar nav ul li a {
+      font-family: 'Montserrat', Verdana;
+      color: white;
+      text-decoration: none;
+    }
+
+    .sidebar nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .main-content {
+      padding: 2rem;
+      flex-grow: 1;
+      background-color: #f9f9f9;
+    }
+    /* Section heading links: underline on hover only */
+    .main-content h2 a {
+      text-decoration: none;
+      color: #008C92;
+      transition: text-decoration 0.2s;
+    }
+    .main-content h2 a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Sidebar Navigation -->
+  <div class="sidebar">
+    <img src="images/Logo.png" alt="Michael Romanek Logo" class="sidebar-profile" />
+    <nav>
+      <ul>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- ✅ Page Content -->
+  <div class="main-content">
+    <section id="welcome" class="welcome">
+  <h2>Hello, I'm Michael Romanek 👋</h2>
+      <p>I'm a 3rd year UX (User Experience) major with a certificate in AI for Emerging Applications at the Milwaukee School of Engineering.</p>
+      <p>I care deeply about blending research, design, and product development to create user-centered experiences that connect people and technology.</p>
+      <p>I built this professional website where I showcase my projects, achievements and share a bit about myself.</p>
+      <p>Feel free to explore and get to know me better!</p>
+    </section>
+
+    <section id="about" class="about-me">
+  <h2><a href="about.html" style="color: #008C92; text-decoration: none;">About Me</a></h2>
+      <div class="bio-container">
+        <img src="images/Casual-Pro-Pic.JPG" alt="My Profile Picture" />
+        <p>Hi! I'm Michael Romanek, a passionate web developer who loves building beautiful, functional websites. I'm currently learning HTML, CSS, and SCSS—and this site is part of that journey!</p>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+  <h2><a href="projects.html" style="color: #008C92; text-decoration: none;">My Projects</a></h2>
+      <div class="project-grid">
+        <div class="project-card">
+            <a href="images/Website.png" target="_blank">
+            <img src="images/Website.png" alt="Personal Website Project" />
+          </a>
+          <h3>Personal Website Project</h3>
+          <p>A fun landing page built with pure HTML and SCSS.</p>
+          <p>I referenced the Branding Project for the color and typography of this website. In the future I hope to improve and add more in the future.</p>
+        </div>
+        <div class="project-card">
+          <a href="images/VD_Branding_Project_Poster copy.jpg" target="_blank">
+            <img src="images/VD_Branding_Project_Poster copy.jpg" alt="Personal Branding/Portfolio Project" />
+          </a>
+          <h3>Personal Branding/Portfolio Project</h3>
+          <p>A project on creating a brand about myself to show all the design principles I learned.</p>
+          <p>Giving reasoning for every aspect in the poster and the products presented.</p>
+        </div>
+        <div class="project-card">
+          <a href="images/Pickleball Tournament Instagram Post Assignment 5.png" target="_blank">
+            <img src="images/Pickleball Tournament Instagram Post Assignment 5.png" alt="Poster Project" />
+          </a>
+          <h3>Poster Project</h3>
+          <p>A poster design I created for a class project. Where we had to create, redesign, and refine over multiple iterations.</p>
+          <p>This challenged me to think outside the box and completely break the mold of my original design to create something new and better for the task at hand.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-form">
+  <h2><a href="contact.html" style="color: #008C92; text-decoration: none;">Contact Me</a></h2>
+      <form action="https://formsubmit.co/mikeromanek04@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="thank-you.html" />
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="contact-info">
+        <p>
+          <img src="images/NewLinkedin.png" alt="LinkedIn" class="icon" />
+          <a href="https://www.linkedin.com/in/michael-c-romanek" target="_blank">Michael Romanek</a>
+        </p>
+        <p>
+          <img src="images/email.png" alt="Email" class="icon" />
+          <a href="mailto:mikeromanek04@gmail.com">mikeromanek04@gmail.com</a>
+        </p>
+        <p>
+          <img src="images/phone.jpg" alt="Phone" class="icon" />
+          <a href="tel:+3095328832">+1 (309) - 532 - 8832</a>
+        </p>
+      </div>      
+    </section>
+
+    <footer style="text-align: center; padding: 1rem; color: #888;">
+      <p>© 2025 Michael Romanek. All rights reserved.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Michael Romanek</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="contact-page">
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="contact" class="contact-form">
+    <h2>Contact Me</h2>
+      <form action="https://formsubmit.co/mikeromanek04@gmail.com" method="POST">
+        <!-- 👇 Optional FormSubmit Config -->
+        <input type="hidden" name="_captcha" value="false" />
+        <!-- 👇 Will need to add domain when I get one here -->
+        <input type="hidden" name="_next" value="thank-you.html">
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required>
+  
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+  
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+  
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+        <p>
+          <img src="images/NewLinkedin.png" alt="LinkedIn" class="icon" />
+          <a href="https://www.linkedin.com/in/michael-c-romanek" target="_blank">Michael Romanek</a>
+        </p>
+        <p>
+          <img src="images/email.png" alt="Email" class="icon" />
+          <a href="mailto:mikeromanek04@gmail.com">mikeromanek04@gmail.com</a>
+        </p>
+        <p>
+          <img src="images/phone.jpg" alt="Phone" class="icon" />
+          <a href="tel:+3095328832">+1 (309) - 532 - 8832</a>
+        </p>
+      </div>      
+</section>
+
+  <footer style="text-align: center; padding: 1rem; color: #888;">
+    <p>© 2025 Michael Romanek. All rights reserved.</p>
+  </footer>
+</body>
+</html>
