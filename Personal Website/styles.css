@@ -204,6 +204,35 @@ header nav ul li a:hover {
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+/* A reusable class for thumbnails that should not be cropped.
+  Use on <img class="thumbnail-contain"> to keep the whole image visible
+  inside the card while preserving aspect ratio. */
+.thumbnail-contain {
+  -o-object-fit: contain;
+    object-fit: contain;
+  object-position: center;
+  background-color: #fff; /* neutral background when aspect ratios differ */
+}
+
+/* Wrapper to force consistent thumbnail sizing and centering */
+.thumbnail-wrapper {
+  height: 320px; /* match card image height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.thumbnail-wrapper img {
+  /* Allow the image to scale but never exceed container */
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+}
 .projects .project-card h3 {
   text-align: center;
   margin: 1rem 0 0.5rem;
@@ -215,6 +244,22 @@ header nav ul li a:hover {
   color: #555;
 }
 
+/* Styled link for opening project DOCX files */
+.doc-link {
+  display: inline-block;
+  padding: 0.4rem 0.75rem;
+  background-color: #008C92;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color 0.15s ease, transform 0.08s ease;
+}
+.doc-link:hover,
+.doc-link:focus {
+  background-color: #005b5f;
+  transform: translateY(-1px);
+}
 .contact-form {
   margin-top: 4rem;
   margin-left: auto;
